@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-deployment 
+  labels:
+    app: flask 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask 
+  template:
+    metadata:
+      labels:
+        app: flask 
+    spec:
+      containers:
+      - name: flask-cont 
+        image: mohanraw/app:2.0
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "80Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

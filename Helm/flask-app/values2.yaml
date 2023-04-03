@@ -1,0 +1,8 @@
+deployment:
+  image: "mohanraw/app"
+  tag : "2.0"
+  name: "flask-deployment-2"
+
+service:
+  port : "30008"
+  name : "flask-services-2"
